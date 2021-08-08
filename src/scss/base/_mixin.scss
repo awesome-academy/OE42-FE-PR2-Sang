@@ -1,0 +1,19 @@
+@mixin displayFlex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin w-h($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin section_center {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
