@@ -17,3 +17,18 @@
     justify-content: center;
     align-items: center;
 }
+
+@mixin arrowCarousel {
+    font-size: 2rem;
+    color: $light-grey;
+    @media screen and (max-width: $tablet-screen) {
+        font-size: 1.2rem;
+    }
+}
+
+@mixin setBackgroundImg($url, $repeat, $position, $size) {
+    background-image: url($url);
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+}

@@ -6,9 +6,9 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
-
 import './scss/style.scss';
+import Homepage from './components/homepage/Homepage';
+import { ROOT_PATH } from './constant/route';
 
 function App() {
   return (
@@ -16,6 +16,11 @@ function App() {
         <Loading></Loading>
         <Router>
           <Header></Header>
+          <Switch>
+            <Route exact path={ROOT_PATH}>
+              <Homepage></Homepage>
+            </Route>
+          </Switch>
           <Footer></Footer>
         </Router>
     </div>
