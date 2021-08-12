@@ -50,5 +50,9 @@
             "working_hour":"Giờ làm việc: 8:00 - 22:00 (Tất cả các ngày bao gồm cả Lễ Tết)",
             "email_support":"Email hỗ trợ: hoidap@cgv.vn"
         }
-    }
+    },
+    "movies":{
+        "view_detail": "Xem chi tiết",
+        "order": "Mua vé" 
+    }   
 }

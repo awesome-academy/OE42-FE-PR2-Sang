@@ -50,5 +50,9 @@
             "working_hour":"Working hours: 8:00 - 22:00 (Monday to Sunday, including Public Holidays)",
             "email_support":"Email support: hoidap@cgv.vn"
         }
-    }
+    },
+    "movies":{
+        "view_detail": "More detail",
+        "order": "Order" 
+    }  
 }
