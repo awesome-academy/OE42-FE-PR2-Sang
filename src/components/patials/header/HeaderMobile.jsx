@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import SwitchLang from '../switchLang/SwitchLang'
-
+import { LOG_IN_PATH } from '../../../constant/route';
 import iconTicket from '../../../assets/img/icon_ticket25.png'
 
-function HeaderMobile() {
+function HeaderMobile(props) {
+    const {
+        isLogIn,
+        handleLogOut,
+    } = props
     const [showMenu, setShowMenu] = useState(false)
     const [showSubMenu, setShowSubMenu] = useState({
         movies:false,
@@ -110,9 +114,19 @@ function HeaderMobile() {
                 <Link className="header__mobile__account-item" to="/">
                     <p>{t('header.navTop.my_account')}</p>
                 </Link>
-                <Link className="header__mobile__account-item" to="/">
-                    <p>{t('header.navTop.account')}</p>
-                </Link>
+                {!isLogIn
+                    ? (
+                        <Link className="header__mobile__account-item" to={LOG_IN_PATH}>
+                            <p>{t('header.navTop.account')}</p>
+                        </Link>
+                    )
+                    : (
+                        <a href="#" onClick={() => handleLogOut()}>
+                            <p style = {{textTransform:"uppercase"}}>{t('info.logout')}</p>
+                        </a>
+                    )
+                }
+
             </div>
         </div>
     )

@@ -1,1 +1,6 @@
 export const ROOT_PATH = "/"
+export const USER_PATH = "/user"
+export const ADMIN_PATH = "/admin"
+export const LOG_IN_PATH = "/login"
+export const REGISTER_PATH = "/register"
+export const MY_TICKET_PATH = "/my-ticket"

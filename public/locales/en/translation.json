@@ -54,5 +54,41 @@
     "movies":{
         "view_detail": "More detail",
         "order": "Order" 
-    }  
+    },
+    "login":{
+        "login": "Login",
+        "email": "Email",
+        "password": "Password",
+        "email_placeholder": "Enter email",
+        "password_placeholder": "Enter password",
+        "require": " is required",
+        "incorrect": "This field is incorrect"
+    },
+    "register":{
+        "register":"Register",
+        "fullname":"Fullname",
+        "fullname_placeholder":"Enter fullname",
+        "birthday":"Date of birth",
+        "birthday_placeholder":"Enter date",
+        "phone_number": "Phone number",
+        "phone_number_placeholder": "Enter phone number",
+        "email":"Email",
+        "email_placeholder":"Enter email",
+        "password":"Password",
+        "password_placeholder":"Enter password",
+        "confirm_password":"Comfirm password",
+        "confirm_password_placeholder":"Enter confirm password",
+        "require":" is required",
+        "incorrect": "This field is incorrect",
+        "phone_number_error": "Invalid phone number",
+        "password_error": "Password contains at least 8 characters, including 1 uppercase letter, 1 lowercase letter and 1 number",
+        "confirm_password_error": "Password not match",
+        "email_error": "Invalid email",
+        "fullname_error": "Invalid name"
+    },
+    "info":{
+        "info_person":"Personal Information",
+        "help":"Help",
+        "logout":"Logout"
+    }
 }
