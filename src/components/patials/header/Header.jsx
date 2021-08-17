@@ -1,17 +1,27 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import Container from '@material-ui/core/Container';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Container from '@material-ui/core/Container'
-import SwitchLang from '../switchLang/SwitchLang'
-import HeaderMobile from './HeaderMobile'
-
-import iconCareers from '../../../assets/img/recruitment_icon1.png'
-import iconNews from '../../../assets/img/icon_promotion25.png'
-import iconTicket from '../../../assets/img/icon_ticket25.png'
-import iconAccount from '../../../assets/img/icon_login25.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
+import iconAccount from '../../../assets/img/icon_login25.png';
+import iconNews from '../../../assets/img/icon_promotion25.png';
+import iconTicket from '../../../assets/img/icon_ticket25.png';
+import iconCareers from '../../../assets/img/recruitment_icon1.png';
+import { LOG_IN_PATH, MY_TICKET_PATH } from '../../../constant/route';
+import { logOutRequest } from '../../../redux/action/authAction';
+import SwitchLang from '../switchLang/SwitchLang';
+import HeaderMobile from './HeaderMobile';
 
 function Header() {
     const { t } = useTranslation();
+    const { isLogIn } = useSelector(state => state.auth);
+    const dispatch = useDispatch();
+    const history = useHistory();
+    
+    const handleLogOut = () => {
+        dispatch(logOutRequest())
+    }
+
     return (
         <header className="header">
             <div className="header__top">
@@ -26,15 +36,43 @@ function Header() {
                         <p>{t('header.navTop.news_&_offers')}</p>
                     </Link>
 
-                    <Link className="header__top-item" to="/">
+                    <Link className="header__top-item" to={MY_TICKET_PATH}>
                         <img src={iconTicket} alt="ticket"/>
                         <p>{t('header.navTop.my_ticker')}</p>
                     </Link>
 
-                    <Link className="header__top-item" to="/">
-                        <img src={iconAccount} alt="account"/>
-                        <p>{t('header.navTop.account')}</p>
-                    </Link>
+                    { !isLogIn 
+                        ? (
+                            <Link className="header__top-item" to={LOG_IN_PATH}>
+                                <img src={iconAccount} alt="account"/>
+                                <p>{t('header.navTop.account')}</p>
+                            </Link>
+                        )
+                        : (
+                            <div className="header__top-item">
+                                <div className="header__top-item--title">
+                                    <img src={iconAccount} alt="account"/>
+                                    <p>Xin chào Hồ Hoàng Sang!</p>
+                                </div>
+                                <ul className="sub-menu">
+                                    <li>
+                                        <Link to="/" className="sub-menu--item">
+                                            <p>{t('info.info_person')}</p>
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/" className="sub-menu--item">
+                                            <p>{t('info.help')}</p>
+                                        </Link>
+                                    </li>
+                                    <li onClick= {() => handleLogOut()} className="sub-menu--item">
+                                        <p>{t('info.logout')}</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        )
+                    }
+
                     <div className="header__top-item">
                         <SwitchLang></SwitchLang>
                     </div>
@@ -105,7 +143,10 @@ function Header() {
                     </div>
                 </Container>
             </div>
-            <HeaderMobile></HeaderMobile>
+            <HeaderMobile
+                isLogIn={isLogIn}
+                handleLogOut={handleLogOut}
+            />
         </header>
     )
 }

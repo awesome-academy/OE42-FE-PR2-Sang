@@ -14,3 +14,56 @@ a {
 ul {
     list-style: none;
 }
+
+.form {
+    .row-block {
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: .5rem;
+            
+            span {
+                color: $dark-red;
+            }
+        }
+
+        input {
+            @include w-h(70%, 100%);
+            padding: .3rem .8rem;
+            outline: none;
+            border: 1px solid $dark-red;
+            margin-bottom: .5rem;
+            @media screen and (max-width: $tablet-screen) {
+                @include w-h(100%, 100%);
+            }
+            @media screen and (max-width: $mobile-screen) {
+                font-size: .8rem;
+            }
+        }
+
+        .error-message {
+            color: $dark-red;
+            display: block;
+            margin-bottom: .5rem;
+            @media screen and (max-width: $mobile-screen) {
+                font-size: .8rem;
+            }
+        }
+    }
+
+    .primary-btn {
+        @include w-h(70%, 100%);
+        outline: none;
+        border: none;
+        color: $white;
+        background-color: $dark-red;
+        padding: .7rem 0;
+        cursor: pointer;
+        @media screen and (max-width: $tablet-screen) {
+            @include w-h(100%, 100%);
+        }
+        @media screen and (max-width: $mobile-screen) {
+            font-size: .8rem;
+        }
+    }
+}

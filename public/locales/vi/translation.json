@@ -54,5 +54,41 @@
     "movies":{
         "view_detail": "Xem chi tiết",
         "order": "Mua vé" 
-    }   
+    },
+    "login":{
+        "login": "Đăng nhập",
+        "email": "Email",
+        "email_placeholder": "Nhập email",
+        "password": "Mật khẩu",
+        "password_placeholder": "Nhập mật khẩu",
+        "require": " không được để trống",
+        "incorrect": "Không hợp lệ"
+    },
+    "register":{
+        "register":"Đăng ký",
+        "fullname":"Họ và tên",
+        "fullname_placeholder":"Nhập họ và tên",
+        "birthday":"Ngày sinh",
+        "birthday_placeholder":"Nhập ngày sinh",
+        "phone_number": "Số điện thoại",
+        "phone_number_placeholder": "Nhập số điện thoại",
+        "email":"Email",
+        "email_placeholder":"Nhập email",
+        "password":"Mật khẩu",
+        "password_placeholder":"Nhập mật khẩu",
+        "confirm_password":"Xác nhận password",
+        "confirm_password_placeholder":"Nhập lại mật khẩu",
+        "require":" không được để trống",
+        "incorrect": "Không hợp lệ",
+        "phone_number_error": "Số điện thoại không hợp lệ",
+        "password_error": "Mật khẩu chứa ít nhất 8 kí tự, bao gồm 1 chữ hoa, 1 chữ thường và 1 số",
+        "confirm_password_error": "Mật khẩu không khớp",
+        "email_error": "Email không hợp lệ",
+        "fullname_error": "Họ và tên không hợp lệ"
+    },
+    "info":{
+        "info_person":"Thông tin cá nhân",
+        "help":"Trợ giúp",
+        "logout":"Đăng xuất"
+    }
 }
