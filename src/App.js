@@ -9,8 +9,11 @@ import Footer from './components/patials/footer/Footer';
 import Header from './components/patials/header/Header';
 import Loading from './components/patials/loading/Loading';
 import Register from './features/auth/pages/register/Register';
-import { LOG_IN_PATH, REGISTER_PATH, ROOT_PATH } from './constant/route';
+import { LOG_IN_PATH, MOVIE_COMING_PATH, MOVIE_PATH, MOVIE_SHOWING_PATH, REGISTER_PATH, ROOT_PATH, MOVIE_SEARCH_PATH } from './constant/route';
 import './scss/style.scss';
+import MoviePage from "./features/moviePage/MoviePage";
+import moviesApi from "./apis/moviesApi";
+import Search from "./features/search/Search";
 
 function App() {
   return (
@@ -21,6 +24,15 @@ function App() {
           <Switch>
             <Route exact path={ROOT_PATH}>
               <Homepage></Homepage>
+            </Route>
+            <Route path={MOVIE_SHOWING_PATH}>
+              <MoviePage categories="showing"></MoviePage>
+            </Route>
+            <Route path={MOVIE_COMING_PATH}>
+              <MoviePage categories="coming"></MoviePage>
+            </Route>
+            <Route path={MOVIE_SEARCH_PATH}>
+              <Search></Search>
             </Route>
             <Route path={LOG_IN_PATH}>
                 <Login></Login>

@@ -12,7 +12,8 @@
             "movies":{
                 "title":"MOVIES",
                 "now_showing":"Now Showing",
-                "coming_soon":"Coming Soon"
+                "coming_soon":"Coming Soon",
+                "search": "Search movie..."
             },
             "theaters":{
                 "title":"THEATERS",
@@ -90,5 +91,9 @@
         "info_person":"Personal Information",
         "help":"Help",
         "logout":"Logout"
+    },
+    "search": {
+        "results_searched": "results searched",
+        "nothing": "No results were found"
     }
 }
