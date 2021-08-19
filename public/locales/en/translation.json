@@ -54,7 +54,16 @@
     },
     "movies":{
         "view_detail": "More detail",
-        "order": "Order" 
+        "order": "Order",
+        "movie_detail": "Movie Detail",
+        "description": "Description",
+        "director": "Director",
+        "cast": "Cast",
+        "genre": "Genre",
+        "releaseDate": "Release date",
+        "runningTime": "Running Time",
+        "language": "Language",
+        "rate": "Rated"
     },
     "login":{
         "login": "Login",

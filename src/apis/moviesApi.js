@@ -9,6 +9,11 @@ const moviesApi = {
     getSearchMovie: (name) => {
         const url = `/movies?q=${name}`;
         return axiosClient.get(url)
+    },
+
+    getOneMovie: (slug) => {
+        const url = `/movies/?_id=${slug}`;
+        return axiosClient.get(url)
     }
 }
 

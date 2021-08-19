@@ -54,7 +54,16 @@
     },
     "movies":{
         "view_detail": "Xem chi tiết",
-        "order": "Mua vé" 
+        "order": "Mua vé",
+        "movie_detail": "Nội Dung Phim",
+        "description": "Chi tiết",
+        "director": "Đạo diễn",
+        "cast": "Diễn viên",
+        "genre": "Thể loại",
+        "releaseDate": "Khởi chiếu",
+        "runningTime": "Thời lượng",
+        "language": "Ngôn ngữ",
+        "rate": "Rated"
     },
     "login":{
         "login": "Đăng nhập",
