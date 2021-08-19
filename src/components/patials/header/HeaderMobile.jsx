@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import SwitchLang from '../switchLang/SwitchLang'
-import { LOG_IN_PATH } from '../../../constant/route';
+import { LOG_IN_PATH, MOVIE_COMING_PATH, MOVIE_SHOWING_PATH } from '../../../constant/route';
 import iconTicket from '../../../assets/img/icon_ticket25.png'
 
 function HeaderMobile(props) {
@@ -56,10 +56,10 @@ function HeaderMobile(props) {
                         </p>
                     </Link>
                     <div className="nav-item--lvl1" style={{display: showSubMenu.movies ? "block" : "none"}}>
-                        <Link to="/" className="lvl1-item">
+                        <Link to={MOVIE_SHOWING_PATH} className="lvl1-item">
                             <p>{t('header.navBottom.movies.now_showing')}</p>
                         </Link>
-                        <Link to="/" className="lvl1-item">
+                        <Link to={MOVIE_COMING_PATH} className="lvl1-item">
                             <p>{t('header.navBottom.movies.coming_soon')}</p>
                         </Link>
                     </div>

@@ -7,7 +7,7 @@ import iconAccount from '../../../assets/img/icon_login25.png';
 import iconNews from '../../../assets/img/icon_promotion25.png';
 import iconTicket from '../../../assets/img/icon_ticket25.png';
 import iconCareers from '../../../assets/img/recruitment_icon1.png';
-import { LOG_IN_PATH, MY_TICKET_PATH } from '../../../constant/route';
+import { LOG_IN_PATH, MOVIE_SHOWING_PATH, MY_TICKET_PATH, MOVIE_COMING_PATH } from '../../../constant/route';
 import { logOutRequest } from '../../../redux/action/authAction';
 import SwitchLang from '../switchLang/SwitchLang';
 import HeaderMobile from './HeaderMobile';
@@ -92,10 +92,10 @@ function Header() {
                                 {t('header.navBottom.movies.title')}
                             </Link>
                             <div className="header__center__menu-item--lvl1">
-                                <Link to="/" className="lvl1-item">   
+                                <Link to={MOVIE_SHOWING_PATH} className="lvl1-item">   
                                     <p>{t('header.navBottom.movies.now_showing')}</p>
                                 </Link>
-                                <Link to="/" className="lvl1-item">
+                                <Link to={MOVIE_COMING_PATH} className="lvl1-item">
                                     <p>{t('header.navBottom.movies.coming_soon')}</p>
                                 </Link>
                             </div>
