@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
 import SwitchLang from '../switchLang/SwitchLang'
-import { LOG_IN_PATH, MOVIE_COMING_PATH, MOVIE_SHOWING_PATH } from '../../../constant/route';
+import { EVENT_PATH, LOG_IN_PATH, MOVIE_COMING_PATH, MOVIE_SHOWING_PATH } from '../../../constant/route';
 import iconTicket from '../../../assets/img/icon_ticket25.png'
 
 function HeaderMobile(props) {
@@ -104,7 +104,7 @@ function HeaderMobile(props) {
                 </div>
 
                 <div className="nav-item">
-                    <Link className="nav-item--lvl0" to="/">
+                    <Link className="nav-item--lvl0" to={EVENT_PATH}>
                         <p>{t('header.navTop.news_&_offers')}</p>
                     </Link>
                 </div>

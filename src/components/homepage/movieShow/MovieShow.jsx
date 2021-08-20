@@ -103,7 +103,7 @@ function MovieShow() {
                                     <div className = "slide-item__content">
                                         <h3>{item.name}</h3>
                                         <div className="slide-item__content-btn">
-                                            <Link to="/" className="detail-btn">{t('movies.view_detail')}</Link>
+                                            <Link to={`/movie/${item._id}`} className="detail-btn">{t('movies.view_detail')}</Link>
                                             <Link to="/" className="order-btn" style ={{display: status==="coming" ? "none" : "flex"}}>
                                                 <img src="https://www.cgv.vn/skin/frontend/cgv/default/images/bg-cate-booking.png" alt=""/>
                                                 {t('movies.order')}

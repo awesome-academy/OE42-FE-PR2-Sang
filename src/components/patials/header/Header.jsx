@@ -7,7 +7,7 @@ import iconAccount from '../../../assets/img/icon_login25.png';
 import iconNews from '../../../assets/img/icon_promotion25.png';
 import iconTicket from '../../../assets/img/icon_ticket25.png';
 import iconCareers from '../../../assets/img/recruitment_icon1.png';
-import { LOG_IN_PATH, MOVIE_SHOWING_PATH, MY_TICKET_PATH, MOVIE_COMING_PATH } from '../../../constant/route';
+import { LOG_IN_PATH, MOVIE_SHOWING_PATH, MY_TICKET_PATH, MOVIE_COMING_PATH, EVENT_PATH } from '../../../constant/route';
 import { logOutRequest } from '../../../redux/action/authAction';
 import SwitchLang from '../switchLang/SwitchLang';
 import HeaderMobile from './HeaderMobile';
@@ -31,7 +31,7 @@ function Header() {
                         <p>{t('header.navTop.careers')}</p>
                     </Link>
 
-                    <Link className="header__top-item" to="/">
+                    <Link className="header__top-item" to={EVENT_PATH}>
                         <img src={iconNews} alt="news"/>
                         <p>{t('header.navTop.news_&_offers')}</p>
                     </Link>
