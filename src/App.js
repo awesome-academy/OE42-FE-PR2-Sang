@@ -4,17 +4,17 @@ import {
 } from "react-router-dom";
 import { NotFound } from './components/common';
 import Homepage from './components/homepage/Homepage';
-import Login from './features/auth/pages/login/Login';
 import Footer from './components/patials/footer/Footer';
 import Header from './components/patials/header/Header';
 import Loading from './components/patials/loading/Loading';
+import { EVENT_PATH, LOG_IN_PATH, MOVIE_COMING_PATH, MOVIE_DETAIL_PATH, MOVIE_SEARCH_PATH, MOVIE_SHOWING_PATH, REGISTER_PATH, ROOT_PATH } from './constant/route';
+import Login from './features/auth/pages/login/Login';
 import Register from './features/auth/pages/register/Register';
-import { LOG_IN_PATH, MOVIE_COMING_PATH, MOVIE_PATH, MOVIE_SHOWING_PATH, REGISTER_PATH, ROOT_PATH, MOVIE_SEARCH_PATH, MOVIE_DETAIL_PATH } from './constant/route';
-import './scss/style.scss';
-import MoviePage from "./features/moviePage/MoviePage";
-import moviesApi from "./apis/moviesApi";
-import Search from "./features/search/Search";
+import EventPage from "./features/eventPage/EventPage";
 import MovieDetail from "./features/moviePage/MovieDetail";
+import MoviePage from "./features/moviePage/MoviePage";
+import Search from "./features/search/Search";
+import './scss/style.scss';
 
 function App() {
   return (
@@ -38,11 +38,14 @@ function App() {
             <Route path={MOVIE_DETAIL_PATH}>
               <MovieDetail></MovieDetail>
             </Route>
+            <Route path={EVENT_PATH}>
+              <EventPage></EventPage>
+            </Route>
             <Route path={LOG_IN_PATH}>
-                <Login></Login>
+              <Login></Login>
             </Route>
             <Route path={REGISTER_PATH}>
-                <Register></Register>
+              <Register></Register>
             </Route>
             <Route>
               <NotFound/>

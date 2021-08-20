@@ -74,7 +74,7 @@ function EventSlide() {
                         event.map(item => {
                             return (
                                 <Link to="/" className="event-item">
-                                    <img src={item} alt="event image"/>
+                                    <img src={item.image} alt="event image"/>
                                 </Link>
                             )
                         })
