@@ -11,6 +11,8 @@ import {
 const initialState = {
     filterData: [],
     error: null,
+    slug: '',
+    oneMovie: []
 }
 
 const moviesReducer = (state = initialState, action) => {
@@ -32,6 +34,27 @@ const moviesReducer = (state = initialState, action) => {
         }
 
         case GET_FILTER_MOVIES_FAIL: {
+            return {
+                ...state,
+                error: action.payload
+            }
+        }
+
+        case GET_ONE_MOVIES_REQUEST: {
+            return {
+                ...state,
+                slug: action.payload
+            }
+        }
+
+        case GET_ONE_MOVIES_SUCCESS: {
+            return {
+                ...state,
+                oneMovie: action.payload
+            }
+        }
+        
+        case GET_ONE_MOVIES_FAIL: {
             return {
                 ...state,
                 error: action.payload

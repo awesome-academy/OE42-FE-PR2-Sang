@@ -17,7 +17,7 @@ function MoviePage(props) {
     const { filterData } = useSelector(state => state.movies);
     const { status } = useSelector(state => state.filter);
     const [input, setInput] = useState('');
-    const history = useHistory();
+const history = useHistory();
 
     useEffect(() => {
         dispatch(filterMovies(categories))
@@ -37,7 +37,7 @@ function MoviePage(props) {
         return (
             <div key={movie._id} className="main__moviePage__movieList-item">
                 <div className="main__moviePage__movieList-item--image">
-                    <Link to="/">
+                    <Link to={`/movie/${movie._id}`}>
                         <img src={movie.avatar} alt={movie.name}/>
                     </Link>
                 </div>

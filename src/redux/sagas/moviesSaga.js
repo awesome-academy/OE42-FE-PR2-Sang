@@ -1,7 +1,11 @@
 import {
     GET_FILTER_MOVIES_REQUEST,
     getFilterMoviesSuccess,
-    getFilterMoviesFail
+    getFilterMoviesFail,
+
+    GET_ONE_MOVIES_REQUEST,
+    getOneMoviesSuccess,
+    getOneMoviesFail
 } from '../action/moviesAction'
 
 import {
@@ -10,7 +14,7 @@ import {
 } from '../action/loadingAction'
 
 import moviesApi from '../../apis/moviesApi'
-import { takeEvery, put, fork, join, select, delay } from 'redux-saga/effects';
+import { takeEvery, put, fork, join, select, delay, call } from 'redux-saga/effects';
 
 function* fetchFilterMovies() {
     try {
@@ -30,8 +34,23 @@ function* fetchFilterMovies() {
     }
 }
 
+function* fetchOneMovie() {
+    try {
+        yield put(showLoading())
+        const { getOneMovie } = moviesApi;
+        const { slug } = yield select(state => state.movies)
+        const { data } = yield call(getOneMovie, slug);
+        yield put(getOneMoviesSuccess(data))
+        yield delay(500);
+        yield put(hideLoading())
+    } catch (error) {
+        yield put(getOneMoviesFail(error))
+    }
+}
+
 function* moviesSaga() {
     yield takeEvery(GET_FILTER_MOVIES_REQUEST, fetchFilterMovies);
+    yield takeEvery(GET_ONE_MOVIES_REQUEST, fetchOneMovie)
 
 }
 

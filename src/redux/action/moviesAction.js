@@ -26,9 +26,10 @@ export const getFilterMoviesFail = (error) => {
     }
 }
 
-export const getOneMoviesRequest = () => {
+export const getOneMoviesRequest = (slug) => {
     return {
         type: GET_ONE_MOVIES_REQUEST,
+        payload: slug
     }
 }
 
