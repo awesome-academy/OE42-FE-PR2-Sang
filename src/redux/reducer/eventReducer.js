@@ -1,12 +1,18 @@
 import {
     GET_EVENT_REQUEST,
     GET_EVENT_SUCCESS,
-    GET_EVENT_FAIL
+    GET_EVENT_FAIL,
+
+    GET_DETAIL_EVENT_REQUEST,
+    GET_DETAIL_EVENT_SUCCESS,
+    GET_DETAIL_EVENT_FAIL,
 } from '../action/eventAction'
 
 const initialState = {
     event: [],
-    error: null
+    error: null,
+    eventDetail: [],
+    slug: ''
 }
 
 const eventReducer = (state = initialState, action) => {
@@ -28,6 +34,27 @@ const eventReducer = (state = initialState, action) => {
         }
 
         case GET_EVENT_FAIL: {
+            return {
+                ...state,
+                error: action.payload
+            }
+        }
+
+        case GET_DETAIL_EVENT_REQUEST: {
+            return {
+                ...state,
+                slug: action.payload
+            }
+        }
+
+        case GET_DETAIL_EVENT_SUCCESS: {
+            return {
+                ...state,
+                eventDetail: action.payload
+            }
+        }
+
+        case GET_DETAIL_EVENT_FAIL: {
             return {
                 ...state,
                 error: action.payload
