@@ -2,6 +2,10 @@ import {
     GET_EVENT_REQUEST,
     getEventSuccess,
     getEventFail,
+
+    GET_DETAIL_EVENT_REQUEST,
+    getDetailEventSuccess,
+    getDetailEventFail
 } from '../action/eventAction'
 
 import {
@@ -10,7 +14,7 @@ import {
 } from '../action/loadingAction'
 
 import eventApi from '../../apis/eventApi'
-import { call, delay, put, takeEvery } from 'redux-saga/effects';
+import { call, delay, put, takeEvery, select } from 'redux-saga/effects';
 
 function* fetchEvent() {
     try {
@@ -28,8 +32,23 @@ function* fetchEvent() {
     }
 }
 
+function* fetchEventDetail() {
+    try {
+        yield put(showLoading());
+        const { getDetail } = eventApi;
+        const { slug } = yield select(state => state.event);
+        const { data } = yield call(getDetail, slug);
+        yield put(getDetailEventSuccess(data));
+        yield delay(800);
+        yield put(hideLoading());
+    } catch (error) {
+        yield put(getDetailEventFail(error))
+    }
+}
+
 function* eventSaga() {
     yield takeEvery(GET_EVENT_REQUEST, fetchEvent)
+    yield takeEvery(GET_DETAIL_EVENT_REQUEST, fetchEventDetail)
 }
 
 export default eventSaga;

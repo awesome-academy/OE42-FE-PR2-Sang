@@ -19,7 +19,7 @@ function EventPage() {
             <li className="event-item">
                 <div className="event-item--wrapper">
                     <Box className="event-item--wrapper__poster" boxShadow={10}>
-                        <Link tp={`/event/${event._id}`}>
+                        <Link to={`/news/${event._id}`}>
                             <img src={event.image} alt={event.name}/>
                         </Link>
                     </Box>
